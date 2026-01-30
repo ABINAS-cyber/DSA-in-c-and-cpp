@@ -7,7 +7,11 @@ void swap(int &a, int &b) {
     b = temp;
 }
 
-int partition(int arr[], int p, int q) {
+int partition(int arr[], int p, int q,int pivot_index) {
+    if(pivot_index<p || pivot_index>q){
+        pivot_index=q;
+    }
+    swap(arr[pivot_index], arr[q]);
     int x = arr[q];   // pivot
     int i = p - 1;
     for (int j = p; j < q; j++) {
@@ -20,11 +24,11 @@ int partition(int arr[], int p, int q) {
     return i + 1;  // return partition index
 }
 
-void quicksort(int arr[], int p, int q) {
+void quicksort(int arr[], int p, int q,int pivot_index) {
     if (p < q) {
-        int partitionIndex = partition(arr, p, q);
-        quicksort(arr, p, partitionIndex - 1);
-        quicksort(arr, partitionIndex + 1, q);
+        int partitionIndex = partition(arr, p, q,pivot_index);
+        quicksort(arr, p, partitionIndex - 1,pivot_index);
+        quicksort(arr, partitionIndex + 1, q,pivot_index);
     }
 }
 
@@ -38,7 +42,10 @@ int main() {
         cin >> arr[i];
     }
 
-    quicksort(arr, 0, n - 1);
+    cout<<"enter the pivot index:";
+    int pivot_index;
+    cin>>pivot_index;
+    quicksort(arr, 0, n - 1,pivot_index);
 
     cout << "Sorted array is: ";
     for (int i = 0; i < n; i++) {
