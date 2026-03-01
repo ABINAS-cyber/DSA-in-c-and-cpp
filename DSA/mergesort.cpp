@@ -5,7 +5,8 @@ void merge(int arr[], int p, int q, int r) {
     int n1 = q - p + 1;
     int n2 = r - q;
 
-    vector<int> L(n1), R(n2);
+    int* L = new int[n1];
+    int* R = new int[n2];
 
     for (int i = 0; i < n1; i++)
         L[i] = arr[p + i];
@@ -13,15 +14,24 @@ void merge(int arr[], int p, int q, int r) {
         R[j] = arr[q + 1 + j];
 
     int i = 0, j = 0, k = p;
-    for(k=p; i < n1 && j < n2; k++) {
+
+    while (i < n1 && j < n2) {
         if (L[i] <= R[j]) {
-            arr[k] = L[i];
-            i++;
+            arr[k++] = L[i++];
         } else {
-            arr[k] = R[j];
-            j++;
+            arr[k++] = R[j++];
         }
     }
+
+    while (i < n1) {
+        arr[k++] = L[i++];
+    }
+    while (j < n2) {
+        arr[k++] = R[j++];
+    }
+
+    delete[] L;
+    delete[] R;
 }
 
 void mergesort(int arr[], int l, int r) {
@@ -37,13 +47,14 @@ int main() {
     cout << "Enter the size of array: ";
     int n;
     cin >> n;
-    vector<int> arr(n);
+    int* arr = new int[n];
+
     cout << "Enter the elements of array: ";
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
 
-    mergesort(arr.data(), 0, n - 1);
+    mergesort(arr, 0, n - 1);
 
     cout << "Sorted array is: ";
     for (int i = 0; i < n; i++) {
@@ -51,5 +62,6 @@ int main() {
     }
     cout << endl;
 
+    delete[] arr;
     return 0;
-} 
+}
