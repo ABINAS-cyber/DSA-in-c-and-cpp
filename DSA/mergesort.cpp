@@ -28,12 +28,12 @@ void merge(int arr[], int p, int q, int r) {
     delete[] R;
 }
 
-void mergesort(int arr[], int l, int r) {
-    if (l < r) {
-        int m = l + (r - l) / 2;
-        mergesort(arr, l, m);
+void mergesort(int arr[], int p, int r) {
+    if (p < r) {
+        int m = p + (r - p) / 2;
+        mergesort(arr, p, m);
         mergesort(arr, m + 1, r);
-        merge(arr, l, m, r);
+        merge(arr, p, m, r);
     }
 }
 
