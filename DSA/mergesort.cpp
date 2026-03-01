@@ -14,20 +14,14 @@ void merge(int arr[], int p, int q, int r) {
         R[j] = arr[q + 1 + j];
 
     int i = 0, j = 0, k = p;
-
-    while (i < n1 && j < n2) {
+    for (; i < n1 && j < n2; k++) {
         if (L[i] <= R[j]) {
-            arr[k++] = L[i++];
+            arr[k] = L[i];
+            i++;
         } else {
-            arr[k++] = R[j++];
+            arr[k] = R[j];
+            j++;
         }
-    }
-
-    while (i < n1) {
-        arr[k++] = L[i++];
-    }
-    while (j < n2) {
-        arr[k++] = R[j++];
     }
 
     delete[] L;
