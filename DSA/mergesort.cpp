@@ -14,7 +14,7 @@ void merge(int arr[], int p, int q, int r) {
         R[j] = arr[q + 1 + j];
 
     int i = 0, j = 0, k = p;
-    while (i < n1 && j < n2) {
+    for (; i < n1 && j < n2; k++) {
         if (L[i] <= R[j]) {
             arr[k] = L[i];
             i++;
@@ -22,7 +22,6 @@ void merge(int arr[], int p, int q, int r) {
             arr[k] = R[j];
             j++;
         }
-        k++;
     }
 
     // Copy remaining elements
