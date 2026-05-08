@@ -1,3 +1,6 @@
+// Raw arrays: Always behave like pass by reference (because they decay to pointers). You don’t need & in the parameter list.
+
+
 #include <bits/stdc++.h>
 using namespace std;
 

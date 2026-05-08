@@ -1,3 +1,6 @@
+// Vectors: Default is pass by value (copy). You must add & to make it pass by reference.
+
+
 #include<bits/stdc++.h>
 
 using namespace std;
