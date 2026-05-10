@@ -1,3 +1,9 @@
+// Why do we need it?
+// If you have a pointer to a struct or class, you can’t use the dot (.) operator directly because the pointer doesn’t hold the object itself, it only points to it.
+
+// The arrow operator is shorthand for dereferencing the pointer and then accessing the member.
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
