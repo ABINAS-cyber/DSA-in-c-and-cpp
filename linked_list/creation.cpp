@@ -27,7 +27,7 @@ void creation() {
         tail->next = newnode;
         tail = newnode;
     }
-}
+}   
 
 void display() {
     Node *temp = head;
