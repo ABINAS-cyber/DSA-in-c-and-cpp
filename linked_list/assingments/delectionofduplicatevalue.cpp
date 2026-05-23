@@ -1,10 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
 struct Node{
     int data;
     Node *next;
 };
+
 
 Node* creationlist(int n){
     Node* head = NULL , *tail = NULL;
