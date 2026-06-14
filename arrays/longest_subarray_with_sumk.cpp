@@ -100,7 +100,20 @@ int getlongestsubarray(vector<int> &a , int k){
 
 
 // optimal approach 
-
+int longestsubarraywithk(vector<int> a ,long long k){
+    int left = 0 , right = 0;
+    long long sum = 0;
+    int maxlen = 0;
+    int n = a.size();
+    while(right < n){
+        while(sum > k){
+         sum-=a[left];   
+         left++;
+        }
+          right++;
+          if (right < n) sum+=a[right];
+    }
+}
 
 
 
