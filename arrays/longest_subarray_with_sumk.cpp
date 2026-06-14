@@ -106,13 +106,15 @@ int longestsubarraywithk(vector<int> a ,long long k){
     int maxlen = 0;
     int n = a.size();
     while(right < n){
-        while(sum > k){
+        if (right < n) sum+=a[right];
+        while(left<=right && sum > k){
          sum-=a[left];   
          left++;
         }
+        if(sum == k) maxlen=max(maxlen,right - left + 1);
           right++;
-          if (right < n) sum+=a[right];
     }
+    return maxlen;
 }
 
 
