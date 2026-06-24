@@ -20,6 +20,9 @@ int count_subarray_sum_equal_k(vector<int> arr,int kth){
 }
 
 
+
+
+
 // better approach 
 int count_Subarray_sum_equal_k(vector<int> arr,int kth){
     int n = arr.size();
