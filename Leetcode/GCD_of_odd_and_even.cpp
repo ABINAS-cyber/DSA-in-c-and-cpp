@@ -34,10 +34,21 @@ int Gcd_of_even_and_odd(int n){
 }
 
 
+
+
+// optimize it 
+int Gcd_of_Even_and_odd(int n)
+{
+    int sumodd = n*n;
+    int sumeven=n*(n-1);
+    __gcd(sumodd,sumeven);
+}
+
+
 int main(){
     int n;
     cout<<"Enter the 1st number : ";
     cin>>n;
-    cout<<Gcd_of_even_and_odd(n);
+    cout<<Gcd_of_Even_and_odd(n);
     return 0;
 }
