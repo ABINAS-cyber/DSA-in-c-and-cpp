@@ -38,11 +38,13 @@ Explanation: Bob will always win. One possible way for Bob to win is shown below
 Alice loses the game because the sum of the removed stones (15) is divisible by 3. Bob wins the game.
 */
 
+
 // BRUTE APPROACH
 bool stoneGameIX(vector<int>& stones) {
     int cnt0 = 0, cnt1 = 0, cnt2 = 0;
     for (int val : stones) {
-        if (int type = val % 3; type == 0) {
+        int type = val % 3;
+        if (type == 0) {
             ++cnt0;
         } else if (type == 1) {
             ++cnt1;
@@ -56,6 +58,18 @@ bool stoneGameIX(vector<int>& stones) {
     return abs(cnt2 - cnt1) > 2;
 }
 
+
+// OPTIMAL APPROACH
+bool StoneGameIX(vector<int>& stones) {
+        int freq[3]={0};
+        for(int x: stones){
+            freq[x%3]++;
+        }
+        const bool f0=(freq[0]&1)==1;
+        if (f0==0) return freq[1]>0 && freq[2]>0;
+        const int diff=abs(freq[1]-freq[2]);
+        return diff>=3;
+    }
 
 
 int main() {
@@ -73,6 +87,7 @@ int main() {
     }
 
     bool result = stoneGameIX(stones);
+    // bool result = StoneGameIX(stones);
     if (result) {
         cout << "Alice wins\n";
     } else {
