@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 class Solution {
 public:
     int maxNumberOfFamilies(int n, vector<vector<int>>& reservedSeats) {
@@ -31,7 +32,6 @@ public:
 };
 
 
-
 /*
 Enter number of rows: 3
 Enter number of reserved seats: 3
@@ -42,8 +42,6 @@ Enter reserved seats (row seat):
 Maximum number of families that can be seated: 4
 
 */
-
-
 
 
 int main() {
