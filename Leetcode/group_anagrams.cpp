@@ -59,6 +59,7 @@ vector<int> getSignature(const string &word) {
     return freq;
 }
 
+
 vector<vector<string>> groupAnagrams(vector<string> &words) {
     vector<vector<string>> groups;          // final groups
     vector<vector<int>> signatures;         // signatures for each group
