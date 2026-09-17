@@ -1,7 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
 // extreme naive solution
 vector<int> findmissingrepeatingnumbers(vector<int> a){
     int n=a.size();
@@ -148,7 +147,6 @@ vector<int> findmisMissingRepeatingNumbers(vector<int> a){
         zero = zero ^ i;
     }
 }
-
 
     int  cnt = 0;
     for(int i = 0;i<n;i++){
