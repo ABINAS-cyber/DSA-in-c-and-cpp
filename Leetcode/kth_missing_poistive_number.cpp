@@ -14,7 +14,6 @@ int missingk(vector<int>& arr,int k){
 // sc : O(1)
 
 
-
 // optimal approach
 int MissingK(vector<int> arr,int k){
     int n = arr.size();
