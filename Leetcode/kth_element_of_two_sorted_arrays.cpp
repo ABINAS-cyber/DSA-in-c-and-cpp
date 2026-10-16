@@ -36,18 +36,25 @@ int main() {
     cin >> n1;
     vector<int> nums1(n1);
     cout << "Enter elements of first array (sorted): ";
+    
     for (int i = 0; i < n1; i++) cin >> nums1[i];
 
     cout << "Enter size of second array: ";
+
     cin >> n2;
+
     vector<int> nums2(n2);
+
     cout << "Enter elements of second array (sorted): ";
+
     for (int i = 0; i < n2; i++) cin >> nums2[i];
 
     cout << "Enter k (1-based index): ";
+
     cin >> k;
 
     int ans = kthelement(nums1, nums2, k);
+
     cout << "The " << k << "-th element is: " << ans << endl;
 
     return 0;
