@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
 int maxproduct(int n){
     int first = 0, second = 0;
     while(n>0){
@@ -16,6 +17,7 @@ int maxproduct(int n){
     }
     return first * second;
 }
+
 
 int main(){
     int n ;
