@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
 double multiply(double number ,int n){
     double ans = 1.0;
     for(int i = 0; i < n; i++){   // run n times
