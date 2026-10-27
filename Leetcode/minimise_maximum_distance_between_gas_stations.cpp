@@ -39,11 +39,6 @@ long double minimiseMaxDistance(vector<int> &arr, int k) {
 // tc :  O(k * n) 
 // sc : O( n )
 
-
-
-
-
-
 int main() {
     int n;
     cout << "Enter number of gas stations: ";
